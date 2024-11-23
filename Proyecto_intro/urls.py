@@ -1,5 +1,5 @@
 from django.urls    import path
-from Login.views    import Login,nigga
+from Login.views    import Login
 from Register.views import Register
 
 urlpatterns = [
