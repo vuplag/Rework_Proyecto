@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    
+    <!-- Enlace a Google Fonts para una tipografía genial -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilo general para resetear márgenes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configuración de fondo */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Press Start 2P', cursive; /* Fuente de Google Fonts */
+            color: #fff;
+            text-align: center;
+            background: url(Background/Terrymain.gif) no-repeat center center fixed;
+            background-size:cover 
+
+
+        }
+
+        /* Contenedor principal */
+        .overlay {
+            /*background-color: rgba(0, 0, 0, 0.7);  Efecto de oscurecimiento */
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Estilo del nombre de la página */
+        .page-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 2px 2px #000;
+            position: absolute; top: 100px;
+        }
+
+        /* Estilo para los botones */
+        .button-login {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #000;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: absolute; bottom: 120px;
+            font-family: 'Press Start 2P', cursive; /* Fuente de Google Fonts */
+        }
+        .button-register {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #000;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: absolute; bottom: 50px;
+            font-family: 'Press Start 2P', cursive; /* Fuente de Google Fonts */
+        }
+
+
+        .button-login:hover {
+            background-color: #ffaa00;
+            transform: scale(1.1);
+        }
+        .button-register:hover {
+            background-color: #ffaa00;
+            transform: scale(1.1);
+        }
+        footer {
+        text-align:center;
+        position: absolute; bottom: 5px;
+        padding: 10px 0;
+        background: #000;
+        color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <!-- Título de la página -->
+        <h1 class="page-title">Terry v/s el Cambio Climatico</h1>
+        
+        <!-- Botones de navegación -->
+        <button class="button-login" onclick="window.location.href='iniciar-sesion.html'">Iniciar Sesión</button>
+        <button class="button-register" onclick="window.location.href='registrarse.html'">Registrarse</button>
+    </div>
+    <footer>
+        <p>© 2024 Caballeros de Pythonia. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

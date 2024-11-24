@@ -1,0 +1,105 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    background: #0078D4;
+    color: white;
+    padding: 1rem;
+    position: relative;
+}
+
+header button {
+    background: white;
+    color: #0078D4;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+header button:hover {
+    background: #e7e7e7;
+}
+
+header h1 {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+}
+
+#consejos {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#consejos h2 {
+    text-align: center;
+    color: #0078D4;
+}
+
+#consejos ul {
+    list-style: none;
+    padding: 0;
+}
+
+#consejos li {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#consejos img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+#consejos div {
+    flex: 1;
+}
+
+#consejos a {
+    font-weight: bold;
+    color: #0078D4;
+    text-decoration: none;
+}
+
+#consejos a:hover {
+    text-decoration: underline;
+}
+
+#consejos p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: white;
+}

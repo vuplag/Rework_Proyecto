@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla Principal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url(background/Space.png);
+            background-size:cover;
+            background-color: #103b73;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .character {
+            margin-bottom: 20px;
+        }
+
+        .character-img {
+            width: 250px; /* Ajusta el tamaño del personaje si es necesario */
+            height: auto;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .button_jugar {
+            display: inline-block;
+            padding: 20px 40px;
+            color: #000000;
+            background-color: #00e554;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            bottom: 20%;
+            right: 10%;
+        }
+        .button_consejos {
+            display: inline-block;
+            padding: 20px 40px;
+            color: #000000;
+            background-color: #c6c200;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+        }
+        .button_skins {
+            display: inline-block;
+            padding: 20px 40px;
+            color: #000000;
+            background-color: #c6c200;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+        }
+
+        .button_jugar:hover {
+            background-color: #037124;
+        }
+        .button_consejos:hover {
+            background-color: #a08645;
+        }
+        .button_skins:hover {
+            background-color: #a08645;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="character">
+            <img src="background/Pinguino.gif" alt="Personaje" class="character-img">
+        </div>
+        <div class="buttons">
+            <a href="jugar.html" class="button_jugar">Jugar</a>
+            <a href="Consejos.html" class="button_consejos">Consejos</a>
+            <a href="skins.html" class="button_skins">Skins</a>
+        </div>
+    </div>
+</body>
+</html>

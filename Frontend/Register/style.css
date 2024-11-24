@@ -1,0 +1,133 @@
+/* Importing Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 100px;
+  background-color: #0d001f;
+  background-image: url(images/Rotating_earth_animated_transparent.gif);
+  background-size: 1500px;
+  overflow: hidden;
+  background-size: cover; /* Ajusta el tamaño del GIF para cubrir toda la pantalla */
+  background-repeat: no-repeat; /* Evita que el GIF se repita */
+  background-position: top; /* solo muestra la parte TOP del GIF */
+  background-attachment: fixed; /* Hace que el fondo permanezca fijo al hacer scroll */
+}
+
+.wrapper {
+  max-width: 500px;
+  width: 100%;
+  background: #63dffa;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title {
+  height: 120px;
+  background: #480551;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper form {
+  padding: 25px 35px;
+}
+
+.wrapper form .row {
+  height: 60px;
+  margin-top: 15px;
+  position: relative;
+}
+
+.wrapper form .row input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 70px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+form .row input:focus {
+  border-color: #63dffa;
+}
+
+form .row input::placeholder {
+  color: #999;
+}
+
+.wrapper form .row i {
+  position: absolute;
+  width: 55px;
+  height: 100%;
+  color: #000000;
+  font-size: 22px;
+  background: #ffe100;
+  border: 1px solid S#ffe100;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper form .pass {
+  margin-top: 12px;
+}
+
+.wrapper form .pass a {
+  color: #f3d600;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.wrapper form .pass a:hover {
+  text-decoration: underline;
+}
+
+.wrapper form .button input {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: #f30000;
+  border: 1px solid #63dffa;
+  cursor: pointer;
+}
+
+form .button input:hover {
+  color: #000000;
+  background: #00ff37;
+}
+
+.wrapper form .login-link {
+  text-align: center;
+  margin-top: 45px;
+  font-size: 17px;
+}
+
+.wrapper form .login-link a {
+  color: #5916a0;
+  text-decoration: none;
+}
+
+form .login-link a:hover {
+  text-decoration: underline;
+}

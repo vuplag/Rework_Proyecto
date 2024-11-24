@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <style>
+        /* Estilos básicos para centrar el contenido */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #5c0d99;
+        }
+        
+        .trivia-container {
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            background-color: #4e8de7;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .character-gif {
+            width: 100px;
+            height: auto;
+            margin: 0 auto 15px;
+            
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #5dc1ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #9ee7ff;
+            
+        }
+
+        .option:active {
+            background-color: #c8c8c8;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="trivia-container">
+        <!-- Personaje en formato GIF -->
+        <img src="background/TerryNice.gif" alt="Personaje" class="character-gif">
+        
+        <!-- Pregunta de la trivia -->
+        <div class="question">{{ question_text }}</div>
+        
+        <!-- Opciones de selección múltiple -->
+        {% for option in options %}
+            <button class="option" onclick="checkAnswer('{{ option.is_correct }}')">{{ option.text }}</button>
+        {% endfor %}
+        
+        <!-- Resultado de la respuesta -->
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswer(isCorrect) {
+            const resultDiv = document.getElementById("result");
+            if (isCorrect === 'True') {
+                resultDiv.textContent = "¡Correcto!";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Incorrecto. Intenta de nuevo.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

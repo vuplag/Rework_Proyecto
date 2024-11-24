@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    background-color: #1d0057;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 1em 0;
+}
+
+
+.skins-container {
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #6200ea;
+    border: 1px solid #4800ad;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+.skin-option {
+    display: block;
+    margin: 1em 0;
+    cursor: pointer;
+    background-color: #00b7ea;
+    border-radius: 5px;
+
+
+}
+
+.skin-option img{
+    width: 100px;
+    height: auto
+
+}
+
+.skin-option.locked {
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #9d0000;
+    color: #ffb2b2;
+    cursor: not-allowed;
+}
+
+.skin-option.locked img{
+    width: 100px;
+    height: auto
+
+}
+.acciones {
+    margin: 2em auto;
+    padding: 0em;
+    background-color: rgb(107, 228, 255);
+    border: 1px solid #4890aa;
+    border-radius: 8px;
+    max-width: 200px;
+}
+
+.puntos {
+    font-weight: bold;
+    color: #6200ea;
+}
+
+/* Estilos para el botón "Volver" */
+.volver-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #00b7ea;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.volver-btn:hover {
+    background-color: #0015b3;
+}
