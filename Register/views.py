@@ -11,4 +11,4 @@ def Register(request):
             return redirect('Login')  # Redirigir al login después de registrarse
     else:
         form = UserCreationForm()
-    return render(request, 'Register.html', {'form': form})
+    return render(request, 'db/index.html', {'form': form})
