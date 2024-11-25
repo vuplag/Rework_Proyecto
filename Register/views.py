@@ -8,7 +8,7 @@ def Register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Login')  # Redirigir al login después de registrarse
+            return redirect('/Login')  # Redirigir al login después de registrarse
     else:
         form = UserCreationForm()
     return render(request, 'db/index.html', {'form': form})
