@@ -5,7 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skins</title>
-    <link rel="stylesheet" href="{% static 'db/css/skins-style.css' %}">
+    <!-- Estilos CSS embebidos -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            text-align: center;
+            background-color: #1d0057;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6200ea;
+            color: white;
+            padding: 1em 0;
+        }
+
+        .skins-container {
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #6200ea;
+            border: 1px solid #4800ad;
+            border-radius: 8px;
+            max-width: 500px;
+        }
+
+        .skin-option {
+            display: block;
+            margin: 1em 0;
+            cursor: pointer;
+            background-color: #00b7ea;
+            border-radius: 5px;
+        }
+
+        .skin-option img {
+            width: 100px;
+            height: auto;
+        }
+
+        .skin-option.locked {
+            padding: 1em;
+            border-radius: 5px;
+            background-color: #9d0000;
+            color: #ffb2b2;
+            cursor: not-allowed;
+        }
+
+        .skin-option.locked img {
+            width: 100px;
+            height: auto;
+        }
+
+        .acciones {
+            margin: 2em auto;
+            padding: 0em;
+            background-color: rgb(107, 228, 255);
+            border: 1px solid #4890aa;
+            border-radius: 8px;
+            max-width: 200px;
+        }
+
+        .puntos {
+            font-weight: bold;
+            color: #6200ea;
+        }
+
+        /* Estilos para el botón "Volver" */
+        .volver-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #00b7ea;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-family: 'Press Start 2P', cursive;
+            
+        }
+
+        .volver-btn:hover {
+            background-color: #0015b3;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <!-- Botón de "Volver" en la esquina superior izquierda -->
@@ -23,26 +110,24 @@
         <section class="skins-container">
             <h2>Selecciona una Skin</h2>
             <label class="skin-option">
-                <img <img id="mascota" class="default-skin" src="{% static 'db/img/TerryNice.gif' %}" alt="Skin actual">
+                <img id="mascota" class="default-skin" src="{% static 'db/img/TerryNice.gif' %}" alt="Skin actual">
                 <a href="Main-Terry.html" type="radio" name="skin" class="skin-radio" data-skin="default" checked>
                 Terry (por defecto)
                 </a>
             </label>
             <label class="skin-option locked">
-                <img id="skin2" class= "skin-2" src="{% static 'db/img/Pinguino.gif' %}" alt="skin 2"
-                <a  type="radio" name="skin" class="skin-radio" data-skin="skin2" disabled >
+                <img id="skin2" class="skin-2" src="{% static 'db/img/Pinguino.gif' %}" alt="skin 2">
+                <a type="radio" name="skin" class="skin-radio" data-skin="skin2" disabled>
                 Pingüino (5 Trivias Completadas)
                 </a>
             </label>
             <label class="skin-option locked">
-                <img id="skin3" class= "skin-3" src="{% static 'db/img/Deathstarskin.gif' %}" alt="skin 3"
-                <a  type="radio" name="skin" class="skin-radio" data-skin="skin3" disabled>
+                <img id="skin3" class="skin-3" src="{% static 'db/img/Deathstarskin.gif' %}" alt="skin 3">
+                <a type="radio" name="skin" class="skin-radio" data-skin="skin3" disabled>
                 Estrella de la Muerte (10 Trivias Completadas)
                 </a>
             </label>
         </section>
-
-
     </main>
 </body>
 </html>
