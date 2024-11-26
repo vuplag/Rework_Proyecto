@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consejos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'db/css/consejos-style.css'%}">
 </head>
 <body>
     <header>
@@ -16,28 +17,28 @@
             <h2>¿Atascado en la  trivia? echa un vistazo a esto</h2>
             <ul>
                 <li>
-                    <img src="Assets/Onulogo.png" alt="Ícono de consejo 1">
+                    <img src="{% static 'db/img/Onulogo.png' %}" alt="Ícono de consejo 1">
                     <div>
                         <a href="https://www.un.org/es/climatechange/what-is-climate-change" target="_blank">Naciones Unidas</a>
                         <p>El cambio climático es cuando el clima de nuestro planeta cambia mucho durante un tiempo largo, y eso afecta la temperatura, el clima y la naturaleza. La mayor parte de este cambio está ocurriendo porque los humanos están usando demasiado petróleo, carbón y gas, lo que produce gases que calientan la Tierra.</p>
                     </div>
                 </li>
                 <li>
-                    <img src="Assets/BANCO-mundial.png" alt="Ícono de consejo 2">
+                    <img src="{% static 'db/img/BANCO-mundial.png'%}" alt="Ícono de consejo 2">
                     <div>
                         <a href="https://www.bancomundial.org/es/news/feature/2022/02/08/what-you-need-to-know-about-oceans-and-climate-change" target="_blank">Banco Mundial</a>
                         <p>El cambio climático está haciendo que los océanos se calienten y se vuelvan más ácidos, lo que puede dañar a los animales y plantas que viven en el agua, como los corales y los peces.</p>
                     </div>
                 </li>
                 <li>
-                    <img src="Assets/NatGeo.jpg" alt="Ícono de consejo 3">
+                    <img src="{% static 'db/img/NatGeo.jpg' %}" alt="Ícono de consejo 3">
                     <div>
                         <a href="https://www.nationalgeographic.es/medio-ambiente/que-es-el-calentamiento-global#header_16534215_0" target="_blank">NatGeo</a>
                         <p>El nivel del mar está subiendo porque los glaciares se están derritiendo debido al calentamiento global. Esto puede causar inundaciones en las ciudades que están cerca del mar y poner en peligro a las personas que viven allí.</p>
                     </div>
                 </li>
                 <li>
-                    <img src="Assets/Edd.jpg" alt=" de consejo 4">
+                    <img src="{% static 'db/img/Edd.jpg'%}" alt=" de consejo 4">
                     <div>
                         <a href="https://www.youtube.com/watch?v=uvqU_L5PZtk&ab_channel=tveinspire" target="_blank">Eddsworld: Climatic Change (2009) SOLO EN INGLES</a>
                         <p>Esta animación realizada en adobe flash tambien te podria ayudar a comprender que es el cambio climatico (y entretenerte un rato)

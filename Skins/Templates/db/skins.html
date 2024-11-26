@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skins</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'db/css/skins-style.css' %}">
 </head>
 <body>
     <!-- Botón de "Volver" en la esquina superior izquierda -->
-    <a href="#" class="volver-btn">← Volver</a>
+    <a href="/Terry" class="volver-btn">← Volver</a>
     
     <header>
         <h1>Selector de Skins para Terry</h1>
@@ -22,19 +23,19 @@
         <section class="skins-container">
             <h2>Selecciona una Skin</h2>
             <label class="skin-option">
-                <img <img id="mascota" class="default-skin" src="Skins/TerryNice.gif" alt="Skin actual">
+                <img <img id="mascota" class="default-skin" src="{% static 'db/img/TerryNice.gif' %}" alt="Skin actual">
                 <a href="Main-Terry.html" type="radio" name="skin" class="skin-radio" data-skin="default" checked>
                 Terry (por defecto)
                 </a>
             </label>
             <label class="skin-option locked">
-                <img id="skin2" class= "skin-2" src="Skins/Pinguino.gif" alt="skin 2"
+                <img id="skin2" class= "skin-2" src="{% static 'db/img/Pinguino.gif' %}" alt="skin 2"
                 <a  type="radio" name="skin" class="skin-radio" data-skin="skin2" disabled >
                 Pingüino (5 Trivias Completadas)
                 </a>
             </label>
             <label class="skin-option locked">
-                <img id="skin3" class= "skin-3" src="Skins/Deathstarskin.gif" alt="skin 3"
+                <img id="skin3" class= "skin-3" src="{% static 'db/img/Deathstarskin.gif' %}" alt="skin 3"
                 <a  type="radio" name="skin" class="skin-radio" data-skin="skin3" disabled>
                 Estrella de la Muerte (10 Trivias Completadas)
                 </a>

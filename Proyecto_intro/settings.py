@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "Skins",
     "Trivia",
     "Terry",
+    "Tips",
 ]
 
 MIDDLEWARE = [
