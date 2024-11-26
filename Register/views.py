@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import RegistroForm
 
 # Vista para el registro
-def Register(request):
+def Register_view(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
         if form.is_valid():
