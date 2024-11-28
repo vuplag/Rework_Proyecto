@@ -1,0 +1,152 @@
+/* Importar Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+    background-color: #0d001f;
+    background-image: url("{% static 'db/img/Rotating_earth_animated_transparent.gif' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.wrapper {
+    max-width: 500px;
+    width: 100%;
+    background: #63dffa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Encabezado del formulario */
+.wrapper .title {
+    height: 100px;
+    background: #480551;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contenido del formulario */
+.wrapper form {
+    padding: 30px;
+}
+
+/* Filas del formulario */
+.wrapper form .row {
+    height: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+/* Estilos de los campos de entrada */
+.wrapper form .row input {
+    width: 100%;
+    height: 100%;
+    padding-left: 60px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.wrapper form .row input:focus {
+    border-color: #480551;
+}
+
+.wrapper form .row input::placeholder {
+    color: #000000;
+}
+
+/* Estilos de los iconos */
+.wrapper form .row i {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    font-size: 18px;
+    color: #fff;
+    background: #480551;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* Enlace para olvidar contraseña */
+.wrapper form .pass {
+    margin-top: -10px;
+    text-align: right;
+}
+
+.wrapper form .pass a {
+    color: #480551;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.wrapper form .pass a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de registro */
+.wrapper form .button input {
+    width: 100%;
+    height: 50px;
+    background: #480551;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wrapper form .button input:hover {
+    background: #63dffa;
+    color: #480551;
+}
+
+/* Enlace a iniciar sesión */
+.wrapper form .login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #480551;
+}
+
+.wrapper form .login-link a {
+    color: #480551;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wrapper form .login-link a:hover {
+    text-decoration: underline;
+}

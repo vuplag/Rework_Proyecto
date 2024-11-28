@@ -1,20 +1,20 @@
-from django.shortcuts            import render, redirect
-from django.contrib.auth         import authenticate, login, logout
-from django.contrib.auth.forms   import UserCreationForm, AuthenticationForm
-from django.http                 import HttpResponse
-
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from .forms import LoginForm
+from django.contrib.auth import logout
 
 def Login(request):
     if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
+        form = LoginForm(data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')  # Redirigir al home después de hacer login
+            user = form.get_user()
+            login(request, user)
+            return redirect('/Terry/')  # Redirige a la página principal
     else:
-        form = AuthenticationForm()
+        form = LoginForm()
     return render(request, 'db/login.html', {'form': form})
 
+
+def Logout_view(request):
+    logout(request)
+    return redirect('/Login/')  # Redirige al login después de cerrar sesión
