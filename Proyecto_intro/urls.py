@@ -7,7 +7,7 @@ from Terry.views    import Terry
 from Trivia.views   import Trivia
 from Skins.views    import Skins
 from Tips.views     import Consejos
-from Login.views import Logout_view
+from Login.views    import Logout_view
 
 
 
