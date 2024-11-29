@@ -8,7 +8,8 @@ from Trivia.views   import Trivia
 from Skins.views    import Skins
 from Tips.views     import Consejos
 from Login.views    import Logout_view
-
+from django.contrib import admin
+from django.urls import path
 
 
 
@@ -21,4 +22,5 @@ urlpatterns = [
     path('Terry/Trivia/',   Trivia          ),
     path('Terry/Skins/',    Skins           ),
     path('Terry/Consejos/', Consejos        ),
+    path('admin/', admin.site.urls),
 ]
