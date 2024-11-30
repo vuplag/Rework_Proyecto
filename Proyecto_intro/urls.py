@@ -10,7 +10,7 @@ from Tips.views     import Consejos
 from Login.views    import Logout_view
 from django.contrib import admin
 from django.urls import path
-
+from Vidas.views import menu_principal
 
 
 urlpatterns = [
@@ -23,4 +23,5 @@ urlpatterns = [
     path('Terry/Skins/',    Skins           ),
     path('Terry/Consejos/', Consejos        ),
     path('admin/', admin.site.urls),
+    path('mascota/<int:mascota_id>/', menu_principal, name='menu_principal'),
 ]

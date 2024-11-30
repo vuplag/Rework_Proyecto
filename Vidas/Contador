@@ -1,0 +1,15 @@
+from django.utils.timezone import now
+
+def actualizar_estado_mascota(mascota):
+    misiones_vencidas = mascota.misiones.filter(completada=False, tiempo_limite__lt=now())
+
+    if misiones_vencidas.exists():
+        mascota.vidas -= 1
+        misiones_vencidas.update(completada=True)  # Marcamos como revisadas
+
+    if mascota.vidas == 1:
+        mascota.estado = 'dañado'
+    elif mascota.vidas <= 0:
+        mascota.estado = 'gameover'
+    
+    mascota.save()
