@@ -10,7 +10,7 @@ from Tips.views     import Consejos
 from Login.views    import Logout_view
 from django.contrib import admin
 from django.urls import path
-from Vidas.views import menu_principal
+from Vidas_Terry.views import menu_principal
 
 
 urlpatterns = [
