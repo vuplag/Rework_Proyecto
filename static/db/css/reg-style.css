@@ -96,6 +96,7 @@ body {
     justify-content: center;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    text-align: center;
 }
 
 /* Enlace para olvidar contraseña */
@@ -116,20 +117,21 @@ body {
 
 /* Botón de registro */
 .wrapper form .button input {
+    padding-left: 0px;
     width: 100%;
     height: 50px;
     background: #480551;
     color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .wrapper form .button input:hover {
-    background: #63dffa;
+    background: #fff;
     color: #480551;
 }
 

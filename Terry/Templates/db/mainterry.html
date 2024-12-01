@@ -18,8 +18,8 @@
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-            background-image: url("{% static 'db\img\Space.png' %}");
-            background-size:cover;
+            background-image: url("{% static 'db/img/Space.png' %}");
+            background-size: cover;
             background-color: #103b73;
         }
 
@@ -134,13 +134,14 @@
 <body>
     <div class="container">
         <div class="character">
-            <img src="{% static 'db\img\TerryNice.gif' %}" alt="Personaje" class="character-img">
+            <!-- Muestra la skin activa, o la skin por defecto si no se ha seleccionado una -->
+            <img src="{% static 'db/img/' %}{{ active_skin|default:'TerryNice.gif' }}" alt="Personaje" class="character-img">
         </div>
         <div class="buttons">
-            <a href="Trivia"        class = "button_jugar"   >Jugar </a>
-            <a href="Consejos"      class = "button_consejos">Consejos</a>
-            <a href="Skins"         class = "button_skins"   >Skins</a>
-            <a href="/Logout" class = "button_Logout"  >Cerrar Sesión</a>
+            <a href="Trivia"        class="button_jugar"   >Jugar</a>
+            <a href="Consejos"      class="button_consejos">Consejos</a>
+            <a href="Skins"         class="button_skins"   >Skins</a>
+            <a href="/Logout"       class="button_Logout"  >Cerrar Sesión</a>
         </div>
     </div>
 </body>

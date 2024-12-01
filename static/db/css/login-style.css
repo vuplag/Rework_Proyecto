@@ -9,18 +9,18 @@
 }
 
 body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding: 0;
-      background-color: #0d001f;
-      background-image: url("{% static 'db/img/Rotating_earth_animated_transparent.gif' %}");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-      overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0;
+  background-color: #0d001f;
+  background-image: url("{% static 'db/img/Rotating_earth_animated_transparent.gif' %}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -49,38 +49,39 @@ body {
 
 .wrapper form .row {
   height: 60px;
-  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
   position: relative;
+  align-items: center;
 }
 
 .wrapper form .row input {
-  height: 100%;
   width: 100%;
-  outline: none;
-  padding-left: 70px;
+  height: 100%;
+  padding-left: 60px;
+  font-size: 16px;
+  border: 1px solid #000000;
   border-radius: 5px;
-  border: 1px solid lightgrey;
-  font-size: 18px;
+  outline: none;
   transition: all 0.3s ease;
 }
 
-form .row input:focus {
-  border-color: #63dffa;
+.wrapper form .row input:focus {
+  border-color: #480551;
 }
 
-form .row input::placeholder {
-  color: #999;
+.wrapper form .row input::placeholder {
+  color: #000000;
 }
 
 .wrapper form .row i {
   position: absolute;
-  width: 50px;
+  left: 0;
   height: 100%;
-  color: #000000;
-  font-size: 22px;
-  background: #ffe100;
-  border: 1px solid #ffe100;
-  border-radius: 5px 0 0 5px;
+  width: 50px;
+  font-size: 18px;
+  color: #fff;
+  background: #480551;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,19 +109,19 @@ form .row input::placeholder {
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
-  background: #f30000;
-  border: 1px solid #63dffa;
+  background: #480551;
+  border: 1px solid #000000;
   cursor: pointer;
 }
 
 form .button input:hover {
-  color: #000000;
-  background: #00ff37;
+  background: #fff;
+  color: #480551;
 }
 
 .wrapper form .signup-link {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 10px;
   font-size: 14px;
 }
 

@@ -46,10 +46,7 @@ INSTALLED_APPS = [
     "Login",
     "MainPG",
     "Register",
-    "Skins",
-    "Trivia",
     "Terry",
-    "Tips",
 ]
 
 MIDDLEWARE = [

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skins</title>
-    <!-- Estilos CSS embebidos -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,6 +36,7 @@
             cursor: pointer;
             background-color: #00b7ea;
             border-radius: 5px;
+            padding: 10px;
         }
 
         .skin-option img {
@@ -53,8 +53,7 @@
         }
 
         .skin-option.locked img {
-            width: 100px;
-            height: auto;
+            opacity: 0.5;
         }
 
         .acciones {
@@ -71,7 +70,6 @@
             color: #6200ea;
         }
 
-        /* Estilos para el botón "Volver" */
         .volver-btn {
             position: absolute;
             top: 10px;
@@ -85,7 +83,6 @@
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-family: 'Press Start 2P', cursive;
-            
         }
 
         .volver-btn:hover {
@@ -95,36 +92,54 @@
     </style>
 </head>
 <body>
-    <!-- Botón de "Volver" en la esquina superior izquierda -->
     <a href="/Terry" class="volver-btn">← Volver</a>
     
     <header>
         <h1>Selector de Skins para Terry</h1>
     </header>
+    
     <main>
         <section class="acciones">
             <h2>Trivias</h2>
-            <p>Puntos actuales: <span class="puntos">0</span>/10</p>
+            <p>Puntos actuales: <span class="puntos">{{ trivias_completed }}</span>/10</p>
         </section>
         
         <section class="skins-container">
             <h2>Selecciona una Skin</h2>
+
+            <!-- Skin por defecto: siempre habilitada -->
             <label class="skin-option">
-                <img id="mascota" class="default-skin" src="{% static 'db/img/TerryNice.gif' %}" alt="Skin actual">
-                <a href="Main-Terry.html" type="radio" name="skin" class="skin-radio" data-skin="default" checked>
-                Terry (por defecto)
+                <img src="{% static 'db/img/TerryNice.gif' %}" alt="Skin por defecto">
+                <a href="{% url 'SeleccionarSkin' 'TerryNice.gif' %}" class="skin-radio">
+                    Terry (por defecto)
                 </a>
             </label>
-            <label class="skin-option locked">
-                <img id="skin2" class="skin-2" src="{% static 'db/img/Pinguino.gif' %}" alt="skin 2">
-                <a type="radio" name="skin" class="skin-radio" data-skin="skin2" disabled>
-                Pingüino (5 Trivias Completadas)
+
+            <!-- Skin 2: Requiere 5 trivias completadas -->
+            <label class="skin-option {% if trivias_completed < 5 %}locked{% endif %}">
+                <img src="{% static 'db/img/Pinguino.gif' %}" alt="Pingüino">
+                <a 
+                    {% if trivias_completed >= 5 %}
+                        href="{% url 'SeleccionarSkin' 'Pinguino.gif' %}"
+                    {% else %}
+                        class="disabled"
+                    {% endif %}
+                >
+                    Pingüino (5 Trivias Completadas)
                 </a>
             </label>
-            <label class="skin-option locked">
-                <img id="skin3" class="skin-3" src="{% static 'db/img/Deathstarskin.gif' %}" alt="skin 3">
-                <a type="radio" name="skin" class="skin-radio" data-skin="skin3" disabled>
-                Estrella de la Muerte (10 Trivias Completadas)
+
+            <!-- Skin 3: Requiere 10 trivias completadas -->
+            <label class="skin-option {% if trivias_completed < 10 %}locked{% endif %}">
+                <img src="{% static 'db/img/Deathstarskin.gif' %}" alt="Estrella de la Muerte">
+                <a 
+                    {% if trivias_completed >= 10 %}
+                        href="{% url 'SeleccionarSkin' 'Deathstarskin.gif' %}"
+                    {% else %}
+                        class="disabled"
+                    {% endif %}
+                >
+                    Estrella de la Muerte (10 Trivias Completadas)
                 </a>
             </label>
         </section>
