@@ -5,4 +5,4 @@ from django.http      import HttpResponse
 
 @login_required
 def Terry(request):
-    return render(request, 'db\mainterry.html')
+    return render(request, 'db/mainterry.html')
