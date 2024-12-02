@@ -18,7 +18,7 @@
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-            background-image: url("{% static 'db/img/Space.png' %}");
+            background-image: url("{% static 'db/img/' %}{{ background_image }}");
             background-size: cover;
             background-color: #103b73;
         }
@@ -32,7 +32,7 @@
         }
 
         .character-img {
-            width: 250px; /* Ajusta el tamaño del personaje si es necesario */
+            width: 250px;
             height: auto;
         }
 
@@ -58,6 +58,7 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-family: 'Press Start 2P', cursive;
         }
+
         .button_consejos {
             display: inline-block;
             padding: 20px 40px;
@@ -74,6 +75,7 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-family: 'Press Start 2P', cursive;
         }
+
         .button_skins {
             display: inline-block;
             padding: 20px 40px;
@@ -89,8 +91,8 @@
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-family: 'Press Start 2P', cursive;
-            
         }
+
         .button_Logout {
             display: inline-block;
             padding: 20px 40px;
@@ -106,7 +108,6 @@
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-family: 'Press Start 2P', cursive;
-            
         }
 
         .button_jugar:hover {
@@ -114,16 +115,19 @@
             color: white;
             transform: scale(1.1);
         }
+
         .button_consejos:hover {
             background-color: #a08645;
             color: white;
             transform: scale(1.1);
         }
+
         .button_skins:hover {
             background-color: #a08645;
             color: white;
             transform: scale(1.1);
         }
+
         .button_Logout:hover {
             background-color: #c10000;
             color: white;
@@ -134,8 +138,8 @@
 <body>
     <div class="container">
         <div class="character">
-            <!-- Muestra la skin activa, o la skin por defecto si no se ha seleccionado una -->
-            <img src="{% static 'db/img/' %}{{ active_skin|default:'TerryNice.gif' }}" alt="Personaje" class="character-img">
+            <!-- Muestra la skin activa -->
+            <img src="{% static 'db/img/' %}{{ active_skin }}" alt="Personaje" class="character-img">
         </div>
         <div class="buttons">
             <a href="Trivia"        class="button_jugar"   >Jugar</a>

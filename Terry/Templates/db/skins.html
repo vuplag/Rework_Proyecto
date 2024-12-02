@@ -110,7 +110,7 @@
             <!-- Skin por defecto: siempre habilitada -->
             <label class="skin-option">
                 <img src="{% static 'db/img/TerryNice.gif' %}" alt="Skin por defecto">
-                <a href="{% url 'SeleccionarSkin' 'TerryNice.gif' %}" class="skin-radio">
+                <a href="{% url 'SeleccionarSkin' 'TerryNice' %}" class="skin-radio">
                     Terry (por defecto)
                 </a>
             </label>
@@ -120,7 +120,7 @@
                 <img src="{% static 'db/img/Pinguino.gif' %}" alt="Pingüino">
                 <a 
                     {% if trivias_completed >= 5 %}
-                        href="{% url 'SeleccionarSkin' 'Pinguino.gif' %}"
+                        href="{% url 'SeleccionarSkin' 'Pinguino' %}"
                     {% else %}
                         class="disabled"
                     {% endif %}
@@ -134,7 +134,7 @@
                 <img src="{% static 'db/img/Deathstarskin.gif' %}" alt="Estrella de la Muerte">
                 <a 
                     {% if trivias_completed >= 10 %}
-                        href="{% url 'SeleccionarSkin' 'Deathstarskin.gif' %}"
+                        href="{% url 'SeleccionarSkin' 'Deathstarskin' %}"
                     {% else %}
                         class="disabled"
                     {% endif %}

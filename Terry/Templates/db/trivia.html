@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia</title>
     <style>
-        /* Estilos básicos para centrar el contenido */
         body {
             display: flex;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            align-items: center;
+            height: 100vh;
             font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #5c0d99;
+            background-image: url("{% static 'db/img/Space.png' %}");
+            background-size: cover;
+            background-color: #103b73;
         }
         
         .trivia-container {
@@ -30,7 +30,6 @@
             width: 100px;
             height: auto;
             margin: 0 auto 15px;
-            
         }
 
         .question {
@@ -52,7 +51,6 @@
 
         .option:hover {
             background-color: #9ee7ff;
-            
         }
 
         .option:active {
@@ -64,35 +62,124 @@
             font-size: 1em;
             font-weight: bold;
         }
+
+        .play-again {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .play-again:hover {
+            background-color: #ffdb4d;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 20px 40px;
+            color: #000000;
+            background-color: #c6c200;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-family: 'Press Start 2P', cursive;
+            
+        }
+        .back-button:hover {
+            background-color: #a08645;
+            color: white;
+            transform: scale(1.1);
+        }
+        
     </style>
 </head>
 <body>
     <div class="trivia-container">
         <!-- Personaje en formato GIF -->
-        <img src="{% static 'db\img\TerryNice.gif' %}" alt="Personaje" class="character-gif">
+        <img src="{% static 'db/img/' %}{{ active_skin }}" alt="Personaje" class="character-gif">
         
         <!-- Pregunta de la trivia -->
         <div class="question">{{ question_text }}</div>
         
         <!-- Opciones de selección múltiple -->
         {% for option in options %}
-            <button class="option" onclick="checkAnswer('{{ option.is_correct }}')">{{ option.text }}</button>
+            <button class="option" onclick="checkAnswer('{{ option.is_correct }}', this)">{{ option.text }}</button>
         {% endfor %}
         
         <!-- Resultado de la respuesta -->
         <div id="result" class="result"></div>
+        
+        <!-- Botón para jugar de nuevo -->
+        <a href="{% url 'Trivia' %}" id="play-again" class="play-again" style="display: none;">Jugar de nuevo</a>
+    </div>
+    <div class="button-container">
+        <a href="{% url 'terry_home' %}" class="back-button">Volver a Terry</a>
     </div>
 
     <script>
-        function checkAnswer(isCorrect) {
+        function checkAnswer(isCorrect, button) {
             const resultDiv = document.getElementById("result");
+            const playAgainButton = document.getElementById("play-again");
+
+            // Desactivar todos los botones de opciones
+            const allOptions = document.querySelectorAll('.option');
+            allOptions.forEach(option => option.disabled = true);
+
             if (isCorrect === 'True') {
                 resultDiv.textContent = "¡Correcto!";
                 resultDiv.style.color = "green";
-            } else {
+
+                // Enviar la actualización al servidor
+                fetch("{% url 'Trivia' %}?correct=true", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Error al registrar la trivia completada");
+                    }
+                })
+                .catch(error => console.error(error));
+            } 
+            else {
                 resultDiv.textContent = "Incorrecto. Intenta de nuevo.";
                 resultDiv.style.color = "red";
+
+                // Enviar la actualización al servidor
+                fetch("{% url 'Trivia' %}?correct=false", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Error al registrar la trivia completada");
+                    }
+                })
+                .catch(error => console.error(error));
             }
+
+            // Mostrar el botón de jugar de nuevo
+            playAgainButton.style.display = "block";
         }
     </script>
 </body>
