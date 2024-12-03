@@ -5,7 +5,7 @@ from MainPG.views      import Home
 from Terry             import urls
 from Login.views       import Logout_view
 from django.contrib    import admin
-from Vidas_Terry.views import menu_principal
+
 
 
 urlpatterns = [
