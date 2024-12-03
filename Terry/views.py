@@ -1,17 +1,25 @@
-from django.shortcuts               import render
+from django.shortcuts               import render, redirect
 from django.http                    import JsonResponse
 from django.contrib.auth.decorators import login_required
 from .models                        import UserProfile
-from django.utils                   import timezone
 from django.utils.timezone          import now
+
 import random
 
 
+@login_required
+def Gameover(request):
+    profile = UserProfile.objects.get(user = request.user)
 
+    return render(request,'db/gameover.html')
 
 @login_required
 def Terry(request):
     profile = UserProfile.objects.get(user=request.user)
+
+    if profile.lives == 0:
+
+        return redirect('/Terry/Gameover/')
 
     background_image = 'Spacedanger.gif' if profile.lives < 3 else 'Space.png'
     skin_image = f"{profile.active_skin.split('.')[0]}-bad.gif" if profile.lives < 3 else f"{profile.active_skin.split('.')[0]}.gif"
@@ -33,6 +41,10 @@ def Terry(request):
 def Consejos(request):
 
     profile = UserProfile.objects.get(user=request.user)
+
+    if profile.lives == 0:
+        return redirect('/Terry/')
+    
     context = {
         'profile': profile
     }
@@ -42,33 +54,39 @@ def Consejos(request):
 
 
 
-
+@login_required
 def Trivia(request):
     profile = UserProfile.objects.get(user=request.user)
-
-    
     background_image = 'Spacedanger.gif' if profile.lives < 3 else 'Space.png'
     skin_image = f"{profile.active_skin.split('.')[0]}-bad.gif" if profile.lives < 3 else f"{profile.active_skin.split('.')[0]}.gif"
+    
+    
+    if profile.lives == 0:
+        return redirect('/Terry/')
 
     if request.method == 'POST':
         
         is_correct = request.GET.get('correct') == 'true'
 
+        
+
+
+        
         if is_correct:
-            
+                
             profile.trivias_completed        += 1
             profile.consecutive_trivias      += 1
             profile.last_trivia_date          = now().date()
             profile.consecutive_failedtrivias = 0
 
-            
+                
             if profile.consecutive_trivias          >= 5:
                 profile.lives                        = min(5, profile.lives + 1)  
                 profile.consecutive_trivias          = 0  
 
 
         else:
-            
+                
             profile.consecutive_trivias        = 0
             profile.consecutive_failedtrivias += 1
 
@@ -155,6 +173,10 @@ def Trivia(request):
 def Skins(request):
     
     profile = UserProfile.objects.get(user=request.user)
+
+    if profile.lives == 0:
+        return redirect('/Terry/')
+    
     context = {
         'trivias_completed': profile.trivias_completed,  
         'active_skin': profile.active_skin,              

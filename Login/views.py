@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import LoginForm
 from django.contrib.auth import logout
+from Terry.models        import UserProfile
 
 def Login(request):
     if request.method == 'POST':
@@ -18,3 +19,19 @@ def Login(request):
 def Logout_view(request):
     logout(request)
     return redirect('/Login/')  # Redirige al login después de cerrar sesión
+
+def reset(request):
+    profile = UserProfile.objects.get(user = request.user)
+
+    profile.trivias_completed         = 0
+    profile. lives                    = 3
+    profile.active_skin               = "TerryNice"
+    profile.consecutive_trivias       = 0
+    profile.last_trivia_date          = None
+    profile.consecutive_failedtrivias = 0
+
+    profile.save()
+
+    logout(request)
+
+    return redirect('/Login/')

@@ -1,8 +1,7 @@
 from django.urls       import path, include
-from Login.views       import Login, Logout_view
+from Login.views       import Login, Logout_view, reset
 from Register.views    import Register_view
 from MainPG.views      import Home
-from Terry.views       import Terry
 from Terry             import urls
 from Login.views       import Logout_view
 from django.contrib    import admin
@@ -16,5 +15,5 @@ urlpatterns = [
     path('',                Home                                ),
     path('Terry/',          include('Terry.urls')               ),
     path('admin/',          admin.site.urls                     ),
-    path('mascota/<int:mascota_id>/', menu_principal, name='menu_principal'),
+    path('reset/',          reset,         name = 'reset'       ),
 ]
